@@ -1,0 +1,24 @@
+<ion-view title="Lists" id="lists" hide-nav-bar="true">
+  <div class="bar bar-header bar-clean">
+    <div class="title" text-align="center">History Lists</div>
+
+  </div>
+  <ion-content class="has-header has-footer">
+      <ion-list  can-swipe="listCanSwipe">
+          <div ng-if="lists.length==0">
+            <ion-item>Still no history lists, create one.</ion-item>
+          </div>       
+          <ion-item ng-repeat="(key,item) in lists" item="item" item-type="item item-icon-left" ng-click="go(key)">
+              <i class="icon ion-ios-barcode"></i>
+              ( {{item.data.length}} ) <strong>{{ item.name }}</strong>
+              <ion-option-button class="button-positive"
+                  ng-click="edit(key,item)"><i class="icon ion-eye"></i></ion-option-button>
+              <ion-option-button class="button-assertive icon ion-trash-a"
+                  ng-click="showConfirmDelete(item)"></ion-option-button>
+          </ion-item>
+      </ion-list>
+  </ion-content>
+  <div class="bar bar-footer bar-clean">
+    <button ng-click="add()" class="icon button-positive button ion-ios-plus-outline pull-right">New</button>
+  </div>
+</ion-view>

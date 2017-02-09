@@ -1,0 +1,15 @@
+<ion-modal-view title="View Code">
+    <ion-header-bar class="bar bar-clean">
+        <h1 class="title">View Code</h1>
+    </ion-header-bar>
+    <ion-content>
+        <ion-list>
+            <ion-item ng-repeat="(key,value) in viewModal.item">
+                <i class="icon ion-ios-barcode-outline"></i> {{ key }} :  {{value}}
+            </ion-item>
+        </ion-list>
+    </ion-content>
+    <ion-footer-bar class="bar bar-positive">
+        <button class="button button-clear button-primary pull-right" ng-click="viewModal.hide()">OK</button>
+    </ion-footer-bar>
+</ion-modal-view>

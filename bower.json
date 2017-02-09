@@ -1,0 +1,7 @@
+{
+  "name": "HelloManateeWorksIonic",
+  "private": "true",
+  "devDependencies": {
+    "ionic": "driftyco/ionic-bower#v1.3.2"
+  }
+}

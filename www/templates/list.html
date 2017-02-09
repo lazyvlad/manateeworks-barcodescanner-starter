@@ -1,0 +1,29 @@
+<ion-view title="Scan History" id="list" hide-nav-bar="true">
+  <div class="bar bar-header bar-clean">
+    <button ui-sref="lists" class="icon button-clean button ion-chevron-left padding-left pull-left">Lists</button>
+    <div class="title" text-align="center">Scan History for {{list.name}}</div>
+  </div>
+  <ion-content class="has-header has-footer">
+      <ion-list  can-swipe="listCanSwipe">
+        <div ng-if="list.data.length==0">
+          <ion-item>History empty, try scanning.</ion-item>
+        </div>      
+        <ion-item ng-repeat="item in list.data" item="item" item-type="item item-icon-left">
+            <i class="icon ion-pinpoint"></i>
+            {{item.type}} -> <strong>{{ item.code }}</strong>
+            <ion-option-button class="button-positive"
+                ng-click="view(item)"><i class="icon ion-eye"></i></ion-option-button>
+            <ion-option-button class="button-assertive icon ion-trash-a"
+                ng-click="delete(item)"></ion-option-button>
+        </ion-item>
+      </ion-list>
+  </ion-content>
+  <div class="bar bar-footer bar-clean">
+      <button ng-click="resetList()" class="icon button-assertive button ion-trash-b"></button>
+
+      <button ng-click="startScanner()" ng-class="{'button pull-right button-positive': !scannerState, 'button pull-right button-assertive': scannerState}">
+          <i ng-class="{'icon ion-pinpoint' : !scannerState, 'icon ion-close' : scannerState}"></i>
+          {{ scannerState == true ? 'Close' : 'Scan' }}
+      </button>
+  </div>
+</ion-view>
