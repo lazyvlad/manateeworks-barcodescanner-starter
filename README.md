@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a starter app for Manatee Works barcode scanner, the cordova platform, and Ionic which uses cordova to handle native functions on your webView app. Some knowledge of the ionic platform is required to use this app.
+This is a starter app for Manatee Works Barcode Scanner and Ionic which uses cordova to handle native functions on your webView (angularJS) app. Knowledge of the Ionic platform is required to modify this app.
 
 ## Dependencies
 
