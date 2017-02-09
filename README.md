@@ -3,8 +3,11 @@
 
 ## Dependencies
 
-- Ionic CLI installed (required)
+- Ionic CLI installed (required) 
 - Cordova 5.x.x installed (required)
+- node
+- git
+- npm
 - \***Android** and/or iOS environment installed (optional, but required if you don't have devices to test)
 
 
@@ -13,18 +16,18 @@
 Clone this project and run the following commands in your terminal:
 
 ```ssh
-$ cd manateeworks-barcodescanner-starter-master && npm install
+$ cd manateeworks-barcodescanner-starter && npm install
 ```
 
-When installation finishes, you need put your credentials MW_LICENSE_KEY generated on [MWDN](https://manateeworks.com/lpr?type=evaluation) inside the `package.json` file.
+When installation finishes, you need to put your credentials MW_LICENSE_KEY generated on [MWDN](https://manateeworks.com/lpr?type=evaluation) inside the `package.json` file.
 
-After that, you need restore the state of project and to do this, please run:
+After that, you need to restore the state of the project and to do this, please run:
 
 ```ssh
 $ ionic state restore
 ```
 
-When restore is finish, you need follow the next steps in each platform supported:
+When restore is finished, do:
 
 #### iOS
 
@@ -43,6 +46,8 @@ Just run the following command to open the project inside a device connected:
 ```ssh
 $ ionic build android
 ```
+
+Note: when building for ios, it could complain that it doesn't have a signing profile, easily fixed within xcode. 
 
 ## Screenshots
 
