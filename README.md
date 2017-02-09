@@ -1,5 +1,8 @@
-# Ionic ManateeWorks Starter Appp
+# Ionic Manatee Works Starter App
 
+## Description
+
+This is a starter app for Manatee Works barcode scanner, the cordova platform, and Ionic which uses cordova to handle native functions on your webView app. Some knowledge of the ionic platform is required to use this app.
 
 ## Dependencies
 
@@ -56,6 +59,10 @@ TODO ADD SCREENSHOTS
 ## Observations
 
 This starter is using [Manateeworks Barcode Scanner Phonegap Plugin](https://github.com/manateeworks/phonegap-manateeworks-v3.git)
+
+## App Structure
+
+The app will build an Ionic 1 Structured project. One that lets you create history lists that hold scanning results. The scanner starts in a cropped view. Saves history lists in localStorage. 
 
 ## License
 
