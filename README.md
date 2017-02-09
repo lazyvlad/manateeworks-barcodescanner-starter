@@ -13,7 +13,7 @@
 Clone this project and run the following commands in your terminal:
 
 ```ssh
-$ cd ionic-google-maps-starter && npm install
+$ cd manateeworks-barcodescanner-starter && npm install
 ```
 
 When installation finishes, you need put your credentials MW_LICENSE_KEY generated on [MWDN](https://manateeworks.com/lpr?type=evaluation) inside the `package.json` file.
