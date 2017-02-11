@@ -8,10 +8,22 @@ var rename = require('gulp-rename');
 var sh = require('shelljs');
 
 var paths = {
-  sass: ['./scss/**/*.scss']
+  sass: ['./scss/**/*.scss'],
+  css: ['./www/lib/ionic/css/*.css']
 };
 
 gulp.task('default', ['sass']);
+
+gulp.task('min', function(done) {
+  gulp.src('./www/lib/ionic/css/ionic.css')
+    .pipe(cleanCss({
+      keepSpecialComments: 0
+    }))
+    .pipe(rename({ extname: '.min.css' }))
+    .pipe(gulp.dest('./www/lib/ionic/css/'))
+    .on('end', done);
+});
+
 
 gulp.task('sass', function(done) {
   gulp.src('./scss/ionic.app.scss')
@@ -29,6 +41,7 @@ gulp.task('sass', function(done) {
 
 gulp.task('watch', function() {
   gulp.watch(paths.sass, ['sass']);
+  gulp.watch(paths.css,['min']);
 });
 
 gulp.task('install', ['git-check'], function() {

@@ -96,8 +96,8 @@
 				}
 
 		}])
-		.controller('listsCtrl',['ListsFactory','$scope','$location', '$ionicPopup' ,'$stateParams', '$ionicModal',
-			function (ListsFactory,$scope, $location, $ionicPopup, $stateParams, $ionicModal) {
+		.controller('listsCtrl',['ListsFactory','$scope','$location', '$ionicPopup' ,'$stateParams', '$ionicModal', '$ionicListDelegate', 
+			function (ListsFactory,$scope, $location, $ionicPopup, $stateParams, $ionicModal,$ionicListDelegate) {
 
 
 				$scope.listCanSwipe = true;   
@@ -156,6 +156,8 @@
 							$scope.addList(form);
 						else
 							$scope.editList(form);
+
+						$ionicListDelegate.closeOptionButtons();
 					}			      
 
 			      $scope.leaveAddChangeDialog = function() {

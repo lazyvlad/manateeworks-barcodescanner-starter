@@ -1,15 +1,15 @@
 <ion-view title="Scan History" id="list" hide-nav-bar="true">
   <div class="bar bar-header bar-clean">
     <button ui-sref="lists" class="icon button-clean button ion-chevron-left padding-left pull-left">Lists</button>
-    <div class="title" text-align="center">Scan History for {{list.name}}</div>
+    <div class="title" text-align="center">{{list.name}}</div>
   </div>
   <ion-content class="has-header has-footer">
       <ion-list  can-swipe="listCanSwipe">
         <div ng-if="list.data.length==0">
-          <ion-item>History empty, try scanning.</ion-item>
+          <ion-item><center>History empty, try scanning</center></ion-item>
         </div>      
         <ion-item ng-repeat="item in list.data" item="item" item-type="item item-icon-left">
-            <i class="icon ion-pinpoint"></i>
+            <i class="icon ion-pinpoint" ng-click="view(item)"></i>
             {{item.type}} -> <strong>{{ item.code }}</strong>
             <ion-option-button class="button-positive"
                 ng-click="view(item)"><i class="icon ion-eye"></i></ion-option-button>
