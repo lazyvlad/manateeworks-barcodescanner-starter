@@ -52,9 +52,6 @@ $ ionic build android
 
 Note: when building for ios, it could complain that it doesn't have a signing profile, easily fixed within xcode. 
 
-## Screenshots
-
-TODO ADD SCREENSHOTS
 
 ## Observations
 
