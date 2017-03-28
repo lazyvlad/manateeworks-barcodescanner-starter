@@ -22,10 +22,6 @@ Clone this project and run the following commands in your terminal:
 $ cd manateeworks-barcodescanner-starter && npm install
 ```
 
-When installation finishes, you need to put your credentials MW_LICENSE_KEY generated on [MWDN](https://manateeworks.com/lpr?type=evaluation) inside the `package.json` file.
-
-After that, you need to restore the state of the project and to do this, please run:
-
 ```ssh
 $ ionic state restore
 ```
@@ -55,7 +51,20 @@ Note: when building for ios, it could complain that it doesn't have a signing pr
 
 ## Observations
 
-This starter is using [Manateeworks Barcode Scanner Phonegap Plugin](https://github.com/manateeworks/phonegap-manateeworks-v3.git)
+When installation finishes, you need to put your credentials MW_LICENSE_KEY generated on [MWDN](https://manateeworks.com/lpr?type=evaluation) in the device ready event. To do this, open up the js/app.js file and fine the keys object
+
+```javascript
+                  var keys = {
+                      'Android'   : "VALID_ANDROID_KEY",
+                      'iOS'       : "VALID_IOS_KEY",
+                      'Win32NT'   : "VALID_WIN_WP8_KEY",
+                      'windows'   : "VALID_WIN_10_UWP_KEY"
+                  };
+``` 
+Change the keys for your desired platform appropriately. 
+
+
+This starter is using [Manateeworks Barcode Scanner Phonegap Plugin](https://github.com/manateeworks/phonegap-manateeworks-v3.git), so if you need more informations check the readme there.
 
 ## App Structure
 

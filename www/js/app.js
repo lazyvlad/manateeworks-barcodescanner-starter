@@ -21,6 +21,27 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
       cordova.plugins.Keyboard.disableScroll(true);
+
+                  //initialize scanner when the device is ready, this can be done in a controller too
+                  var keys = {
+                      'Android'   : "VALID_ANDROID_KEY",
+                      'iOS'       : "VALID_IOS_KEY",
+                      'Win32NT'   : "VALID_WIN_WP8_KEY",
+                      'windows'   : "VALID_WIN_10_UWP_KEY"
+                  };
+                  //resolve the key for this platform; device is provided by cordova
+                  var key = (keys[device.platform])?keys[device.platform]:'';
+                                 
+                  console.log(key);
+
+                  mwbScanner.setKey(key).then(function(response){
+                      if(response)
+                          console.log('VALID KEY');
+                      else
+                          console.log('INVALID KEY');
+
+                  });
+
     }
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required

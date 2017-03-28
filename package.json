@@ -26,10 +26,7 @@
     "ionic-plugin-keyboard",    
     {
       "locator": "https://github.com/manateeworks/phonegap-manateeworks-v3.git",
-      "id": "manateeworks-barcodescanner-v3",
-      "variables": {
-        "MW_LICENSE_KEY": "SETTHISTOAVALUE"
-      }
+      "id": "manateeworks-barcodescanner-v3"
     }      
   ],
   "cordovaPlatforms": [
